@@ -4,6 +4,8 @@ import com.challenge.entity.User;
 import com.challenge.repository.UserRepository;
 import com.challenge.service.interfaces.UserServiceInterface;
 import lombok.AllArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +14,7 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class UserService implements UserServiceInterface {
-
+	@Autowired
     private UserRepository userRepository;
 
     @Override

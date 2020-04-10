@@ -16,5 +16,35 @@ public class CandidateDTO {
     private Long companyId;
     private Integer status;
     private String createdAt;
+	public Long getUserId() {
+		return userId;
+	}
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+	public Long getAccelerationId() {
+		return accelerationId;
+	}
+	public void setAccelerationId(Long accelerationId) {
+		this.accelerationId = accelerationId;
+	}
+	public Long getCompanyId() {
+		return companyId;
+	}
+	public void setCompanyId(Long companyId) {
+		this.companyId = companyId;
+	}
+	public Integer getStatus() {
+		return status;
+	}
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+	public String getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
 
 }

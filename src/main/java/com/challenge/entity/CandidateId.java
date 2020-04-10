@@ -17,7 +17,12 @@ import java.io.Serializable;
 @EntityListeners(AuditingEntityListener.class)
 public class CandidateId implements Serializable {
 
-    @ManyToOne
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@ManyToOne
     private User user;
 
     @ManyToOne

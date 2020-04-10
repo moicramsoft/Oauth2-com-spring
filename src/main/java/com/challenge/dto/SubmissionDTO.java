@@ -17,5 +17,29 @@ public class SubmissionDTO {
     private String userId;
     private BigDecimal score;
     private String createdAt;
+	public Long getChallengeId() {
+		return challengeId;
+	}
+	public void setChallengeId(Long challengeId) {
+		this.challengeId = challengeId;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public BigDecimal getScore() {
+		return score;
+	}
+	public void setScore(BigDecimal score) {
+		this.score = score;
+	}
+	public String getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
 
 }
