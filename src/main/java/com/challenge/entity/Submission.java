@@ -30,4 +30,28 @@ public class Submission {
     @CreatedDate
     private LocalDateTime createdAt;
 
+	public SubmissionId getId() {
+		return id;
+	}
+
+	public void setId(SubmissionId id) {
+		this.id = id;
+	}
+
+	public Float getScore() {
+		return score;
+	}
+
+	public void setScore(Float score) {
+		this.score = score;
+	}
+
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+
 }

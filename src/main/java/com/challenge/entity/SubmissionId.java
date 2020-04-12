@@ -17,15 +17,26 @@ import java.io.Serializable;
 @EntityListeners(AuditingEntityListener.class)
 public class SubmissionId implements Serializable {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-	@ManyToOne
+    @ManyToOne
     private Challenge challenge;
 
     @ManyToOne
     private User user;
+
+	public Challenge getChallenge() {
+		return challenge;
+	}
+
+	public void setChallenge(Challenge challenge) {
+		this.challenge = challenge;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 }

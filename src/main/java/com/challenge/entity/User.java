@@ -8,17 +8,12 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -28,16 +23,9 @@ import java.util.List;
 @EntityListeners(AuditingEntityListener.class)
 @EqualsAndHashCode(of = "id")
 @Table(name = "users")
-public class User implements UserDetails {
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	@Column
-    @NotNull
-    @Size(max = 255)
-	private String login;
-	@Id
+public class User {
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -75,44 +63,68 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "id.user")
     private List<Submission> submissions;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.asList(new SimpleGrantedAuthority("ADMIN"));
-    }
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
-    public String getUsername() {
-        return email;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
-    
-	public String getLogin() {
-		return login;
+	public Long getId() {
+		return id;
 	}
-	public void setLogin(String login) {
-		this.login = login;
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+		System.out.println("fullName");
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public List<Candidate> getCandidates() {
+		return candidates;
+	}
+
+	public void setCandidates(List<Candidate> candidates) {
+		this.candidates = candidates;
+	}
+
+	public List<Submission> getSubmissions() {
+		return submissions;
+	}
+
+	public void setSubmissions(List<Submission> submissions) {
+		this.submissions = submissions;
 	}
 }

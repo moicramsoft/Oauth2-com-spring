@@ -17,12 +17,7 @@ import java.io.Serializable;
 @EntityListeners(AuditingEntityListener.class)
 public class CandidateId implements Serializable {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-	@ManyToOne
+    @ManyToOne
     private User user;
 
     @ManyToOne
@@ -30,5 +25,29 @@ public class CandidateId implements Serializable {
 
     @ManyToOne
     private Company company;
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Acceleration getAcceleration() {
+		return acceleration;
+	}
+
+	public void setAcceleration(Acceleration acceleration) {
+		this.acceleration = acceleration;
+	}
+
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
 
 }
